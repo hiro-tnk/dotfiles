@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/hiro/GoogleDrive/docclass/raid/csv_for_training'
+let g:netrw_dirhist_2='scp://tanaka@vm7.m-crisis.wide.ad.jp/home/tanaka/ssd/tanaka/code/'
+let g:netrw_dirhist_3='scp://tanaka@vm7.m-crisis.wide.ad.jp//home/tanaka/ssd/tanaka/code/'
+let g:netrw_dirhist_4='/Users/hiro/.ipython'
