@@ -42,6 +42,7 @@ if has('vim_starting')
   NeoBundle "tyru/caw.vim.git"
   NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex' 
   NeoBundle "kien/rainbow_parentheses.vim"
+  NeoBundle 'mattn/emmet-vim'
   "対応する括弧の入力、邪魔なので消す
   "NeoBundle 'kana/vim-smartinput'
   NeoBundleCheck

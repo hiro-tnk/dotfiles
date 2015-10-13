@@ -4,8 +4,7 @@
 
 export TESSDATA_PREFIX="/usr/local/Cellar/tesseract/3.02.02/share"
 export PYTHONPATH="/Users/hiro/py_module:$PYTHONPATH"
-
-# added by Anaconda 1.8.0 installer
+# added by Anaconda 2.3.0 installer
 export PATH="/Users/hiro/anaconda/bin:$PATH"
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
