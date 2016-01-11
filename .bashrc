@@ -11,5 +11,6 @@ source ~/yukitask/here_aliases
 # command aliases
 alias octave='open -a "Octave-cli"'
 alias mkcd='source ~/dotfiles_and_sh/mkcd.sh'
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 echo "＼(うぇるかむようこそアールシー)／"
