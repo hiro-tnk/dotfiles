@@ -25,3 +25,5 @@ if [ -f ~/.bashrc ]; then
 fi
 
 echo "＼(うぇるかむようこそプロファイル)／"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
