@@ -10,7 +10,7 @@ source ~/yukitask/here_aliases
 
 # command aliases
 alias octave='open -a "Octave-cli"'
-alias mkcd='source ~/dotfiles_and_sh/mkcd.sh'
+mkcd () { mkdir $1; cd $1 ;}
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
-echo "＼(うぇるかむようこそアールシー)／"
+# echo "＼(うぇるかむようこそアールシー)／"
