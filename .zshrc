@@ -159,6 +159,11 @@ case ${OSTYPE} in
         #Mac用の設定
         export CLICOLOR=1
         alias ls='ls -G -F'
+
+        #MacVim を使用
+        export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+        alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+        export PATH='/Applications/MacVim.app/Contents/MacOS':$PATH
         ;;
     linux*)
         #Linux用の設定
