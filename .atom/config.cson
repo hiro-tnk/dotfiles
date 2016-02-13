@@ -1,0 +1,29 @@
+"*":
+  "atom-beautify":
+    _analyticsUserId: "6c1ae746-abb3-4ee2-8331-eee8020b1e52"
+  core:
+    audioBeep: false
+    disabledPackages: [
+      "vim-mode"
+      "autocomplete-ruby"
+      "rails-snippets"
+      "tag"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontFamily: "Migu 1M"
+    invisibles: {}
+    showInvisibles: true
+  "exception-reporting":
+    userId: "a7c368f8-18b7-c583-b716-e5ca2b2a4744"
+  "file-types":
+    erb: "text.html.ruby"
+    rb: "source.ruby.rails"
+  linter: {}
+  term3: {}
+  "vim-mode": {}
+  welcome:
+    showOnStartup: false
