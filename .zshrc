@@ -164,6 +164,11 @@ case ${OSTYPE} in
         export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
         alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
         export PATH='/Applications/MacVim.app/Contents/MacOS':$PATH
+
+        #zsh-completation
+        if [ -e /usr/local/share/zsh-completions ]; then
+          fpath=(/usr/local/share/zsh-completions $fpath)
+        fi
         ;;
     linux*)
         #Linux用の設定
