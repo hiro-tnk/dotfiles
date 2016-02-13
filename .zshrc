@@ -41,6 +41,10 @@ zstyle ':zle:*' word-style unspecified
 
 ########################################
 # 補完
+#zsh-completation
+if [ -e /usr/local/share/zsh-completions ]; then
+  fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 # 補完機能を有効にする
 autoload -Uz compinit
 compinit
@@ -165,10 +169,6 @@ case ${OSTYPE} in
         alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
         export PATH='/Applications/MacVim.app/Contents/MacOS':$PATH
 
-        #zsh-completation
-        if [ -e /usr/local/share/zsh-completions ]; then
-          fpath=(/usr/local/share/zsh-completions $fpath)
-        fi
         ;;
     linux*)
         #Linux用の設定
