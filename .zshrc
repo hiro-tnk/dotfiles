@@ -5,7 +5,11 @@
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
-
+if [ -f ~/.indiv_var ]; then
+    . ~/.indiv_var
+else
+    export ANACONDA_ROOT="$HOME"
+fi
 
 # 色を使用出来るようにする
 autoload -Uz colors
@@ -196,14 +200,14 @@ code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 
 export TESSDATA_PREFIX="/usr/local/Cellar/tesseract/3.02.02/share"
-export PYTHONPATH="$HOME/py_module:$PYTHONPATH"
+export PYTHONPATH="$ANACONDA_ROOT/py_module:$PYTHONPATH"
 # added by Anaconda 2.3.0 installer
-export PATH="$HOME/anaconda/bin:$PATH"
+export PATH="$ANACONDA_ROOT/anaconda/bin:$PATH"
 
 ### Virtualenvwrapper
-if [ -f $HOME/anaconda/bin/virtualenvwrapper.sh ]; then
+if [ -f $ANACONDA_ROOT/anaconda/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
-    source $HOME/anaconda/bin/virtualenvwrapper.sh
+    source $ANACONDA_ROOT/anaconda/bin/virtualenvwrapper.sh
 fi
 
 #for rbenv
