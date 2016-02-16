@@ -169,6 +169,9 @@ case ${OSTYPE} in
         alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
         export PATH='/Applications/MacVim.app/Contents/MacOS':$PATH
 
+        if [ -f $(brew --prefix)/etc/bash_completion ]; then
+            . $(brew --prefix)/etc/bash_completion
+        fi
         ;;
     linux*)
         #Linux用の設定
@@ -179,10 +182,12 @@ esac
 # vim:set ft=zsh:
 
 #yukiyask
-export EDITOR=vim
-PATH=~/yukitask:$PATH
-source ~/yukitask/command_aliases
-source ~/yukitask/here_aliases
+if [ -e $HOME/yukitask ]; then
+    export EDITOR=vim
+    PATH=~/yukitask:$PATH
+    source ~/yukitask/command_aliases
+    source ~/yukitask/here_aliases
+fi
 
 # command aliases
 alias octave='open -a "Octave-cli"'
@@ -195,15 +200,14 @@ export PYTHONPATH="/Users/hiro/py_module:$PYTHONPATH"
 # added by Anaconda 2.3.0 installer
 export PATH="/Users/hiro/anaconda/bin:$PATH"
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-. $(brew --prefix)/etc/bash_completion
-fi
 ### Virtualenvwrapper
 if [ -f /Users/hiro/anaconda/bin/virtualenvwrapper.sh ]; then
-	export WORKON_HOME=$HOME/.virtualenvs
-	source /Users/hiro/anaconda/bin/virtualenvwrapper.sh
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /Users/hiro/anaconda/bin/virtualenvwrapper.sh
 fi
 
 #for rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -e $HOME/.rbenv/bin ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
