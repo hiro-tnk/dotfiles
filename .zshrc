@@ -52,6 +52,10 @@ fi
 # 補完機能を有効にする
 autoload -Uz compinit
 compinit
+#gibo
+if [ -e $HOME/.gibo-completion.zsh ]; then
+    source $HOME/.gibo-completion.zsh
+fi
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -211,7 +215,7 @@ if [ -f $ANACONDA_ROOT/anaconda/bin/virtualenvwrapper.sh ]; then
 fi
 
 #for rbenv
-if [ -e $HOME/.rbenv/bin ]; then
+if [ -e $HOME/.rbenv/shims ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
 fi
