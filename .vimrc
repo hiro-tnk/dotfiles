@@ -1,53 +1,48 @@
 "set imdisable
 "--------------------------------------------------------------------------
 " neobundle
-set nocompatible               " be iMproved
+if &compatible
+  set nocompatible
+endif              " be iMproved
 set number
 filetype off
 
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+call dein#begin(expand('~/.vim/dein'))
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  " originalrepos on github
-  NeoBundle 'Shougo/neobundle.vim'
-  NeoBundle 'Shougo/vimproc', {
-    \ 'build' : {
-      \ 'windows' : 'make -f make_mingw32.mak',
-      \ 'cygwin' : 'make -f make_cygwin.mak',
-      \ 'mac' : 'make -f make_mac.mak',
-      \ 'unix' : 'make -f make_unix.mak',
-    \ },
-  \ }
-  NeoBundle 'VimClojure'
-  NeoBundle 'thinca/vim-quickrun'
-  NeoBundle 'Shougo/vimshell'
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Shougo/neocomplete'
-  NeoBundle 'Shougo/neosnippet'
-  NeoBundle 'Shougo/neosnippet-snippets'
-  NeoBundle 'jpalardy/vim-slime'
-  NeoBundle 'scrooloose/syntastic'
-  " NeoBundle 'https://bitbucket.org/kovisoft/slimv'
-  NeoBundle 'altercation/vim-colors-solarized'
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {
+    \ 'build': {
+    \     'windows': 'tools\\update-dll-mingw',
+    \     'cygwin': 'make -f make_cygwin.mak',
+    \     'mac': 'make -f make_mac.mak',
+    \     'linux': 'make',
+    \     'unix': 'gmake',
+    \    },
+    \ })
 
-  NeoBundle 'davidhalter/jedi-vim'
-  NeoBundle 'hynek/vim-python-pep8-indent'
-  NeoBundle 'nvie/vim-flake8'
-  " NeoBundle 'Townk/vim-autoclose'
-  NeoBundle 'scrooloose/syntastic'
-  NeoBundle 'nathanaelkane/vim-indent-guides'
-  NeoBundle 'kevinw/pyflakes-vim'
-  NeoBundle "tyru/caw.vim.git"
-  NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex' 
-  NeoBundle "kien/rainbow_parentheses.vim"
-  NeoBundle 'mattn/emmet-vim'
-  "対応する括弧の入力、邪魔なので消す
-  "NeoBundle 'kana/vim-smartinput'
-  NeoBundleCheck
-  call neobundle#end()
-endif
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/neosnippet')
+call dein#add('VimClojure')
+call dein#add('thinca/vim-quickrun')
+call dein#add('Shougo/vimshell')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('jpalardy/vim-slime')
+call dein#add('scrooloose/syntastic')
+call dein#add('altercation/vim-colors-solarized')
+
+call dein#add('davidhalter/jedi-vim')
+call dein#add('hynek/vim-python-pep8-indent')
+call dein#add('nvie/vim-flake8')
+call dein#add('scrooloose/syntastic')
+call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('kevinw/pyflakes-vim')
+call dein#add("tyru/caw.vim.git")
+call dein#add("kien/rainbow_parentheses.vim")
+call dein#add('mattn/emmet-vim')
+call dein#end()
 filetype plugin indent on     " required!
 filetype indent on
 syntax on
@@ -226,4 +221,3 @@ au BufRead,BufNewFile wscript set filetype=python
 :set autoindent
 :set expandtab
 :set shiftwidth=4
-

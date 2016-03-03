@@ -1,4 +1,5 @@
 .git
 *~
 .vim/bundle
+.vim/dein
 .DS_Store
